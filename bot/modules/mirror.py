@@ -169,19 +169,19 @@ class MirrorListener(listeners.MirrorListeners):
                     share_url += '/'
                     if SHORTENER is not None and SHORTENER_API is not None:
                         siurl = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={share_url}&format=text').text
-                        buttons.buildbutton("⚡ Index Link", siurl)
+                        buttons.buildbutton("ONEDU Index Link", siurl)
                     else:
-                        buttons.buildbutton("⚡ Index Link", share_url)
+                        buttons.buildbutton("ONEDU Index Link", share_url)
                 else:
                     share_urls = f'{INDEX_URL}/{url_path}?a=view'
                     if SHORTENER is not None and SHORTENER_API is not None:
                         siurl = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={share_url}&format=text').text
                         siurls = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={share_urls}&format=text').text
-                        buttons.buildbutton("⚡ Index Link", siurl)
+                        buttons.buildbutton("ONEDU Index Link", siurl)
                         if VIEW_LINK:
                             buttons.buildbutton("🌐 View Link", siurls)
                     else:
-                        buttons.buildbutton("⚡ Index Link", share_url)
+                        buttons.buildbutton("ONEDU Index Link", share_url)
                         if VIEW_LINK:
                             buttons.buildbutton("🌐 View Link", share_urls)
             if BUTTON_FOUR_NAME is not None and BUTTON_FOUR_URL is not None:
